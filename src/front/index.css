@@ -1,0 +1,456 @@
+/* =========================================================
+   MINISTORE MODERN FLAT DESIGN SYSTEM
+   Typography: Plus Jakarta Sans (Google Fonts)
+   Color Palette: Deep Slate, Royal Cobalt, Crisp Emerald
+   Full Mobile-First Responsiveness
+   ========================================================= */
+
+:root {
+  /* Google Font */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Curated Flat Color Palette */
+  --bs-primary: #0f172a;
+  --bs-primary-rgb: 15, 23, 42;
+  --bs-secondary: #64748b;
+  --bs-secondary-rgb: 100, 116, 139;
+  --bs-success: #059669;
+  --bs-success-rgb: 5, 150, 105;
+  --bs-warning: #d97706;
+  --bs-danger: #e11d48;
+  --bs-dark: #0f172a;
+  --bs-dark-rgb: 15, 23, 42;
+  --bs-light: #f8fafc;
+  --bs-light-rgb: 248, 250, 252;
+
+  --bs-body-bg: #f8fafc;
+  --bs-body-color: #1e293b;
+  --bs-border-color: #e2e8f0;
+  --bs-border-radius: 8px;
+  --bs-border-radius-sm: 6px;
+  --bs-border-radius-lg: 12px;
+
+  /* Custom Flat Design Tokens */
+  --flat-canvas: #f8fafc;
+  --flat-surface: #ffffff;
+  --flat-surface-subtle: #f1f5f9;
+  --flat-text-title: #0f172a;
+  --flat-text-body: #334155;
+  --flat-text-muted: #64748b;
+  --flat-border: #e2e8f0;
+  --flat-border-hover: #cbd5e1;
+  
+  --flat-accent: #2563eb;
+  --flat-accent-hover: #1d4ed8;
+  --flat-action: #059669;
+  --flat-action-hover: #047857;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--flat-canvas);
+  color: var(--flat-text-body);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--flat-text-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   COMPONENTS: CARDS & SURFACES
+   ========================================================= */
+
+.card-flat {
+  background-color: var(--flat-surface);
+  border: 1px solid var(--flat-border);
+  border-radius: var(--bs-border-radius);
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.card-flat:hover {
+  border-color: var(--flat-border-hover);
+}
+
+/* =========================================================
+   BUTTONS: FLAT & SOLID
+   ========================================================= */
+
+.btn {
+  font-family: var(--font-main);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: var(--bs-border-radius-sm);
+  transition: all 0.15s ease-in-out;
+  box-shadow: none !important;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Skeleton Loading Shimmer */
+.skeleton-box {
+  background-color: #e2e8f0;
+  border-radius: var(--bs-border-radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.btn-flat-primary {
+  background-color: var(--flat-accent);
+  color: #ffffff;
+  border: 1px solid var(--flat-accent);
+}
+
+.btn-flat-primary:hover,
+.btn-flat-primary:focus {
+  background-color: var(--flat-accent-hover);
+  border-color: var(--flat-accent-hover);
+  color: #ffffff;
+}
+
+.btn-flat-dark {
+  background-color: var(--bs-dark);
+  color: #ffffff;
+  border: 1px solid var(--bs-dark);
+}
+
+.btn-flat-dark:hover,
+.btn-flat-dark:focus {
+  background-color: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
+}
+
+.btn-flat-outline {
+  background-color: #ffffff;
+  color: var(--flat-text-title);
+  border: 1px solid var(--flat-border);
+}
+
+.btn-flat-outline:hover,
+.btn-flat-outline:focus {
+  background-color: var(--flat-surface-subtle);
+  border-color: var(--flat-border-hover);
+  color: var(--flat-text-title);
+}
+
+.btn-flat-success {
+  background-color: var(--flat-action);
+  color: #ffffff;
+  border: 1px solid var(--flat-action);
+}
+
+.btn-flat-success:hover,
+.btn-flat-success:focus {
+  background-color: var(--flat-action-hover);
+  border-color: var(--flat-action-hover);
+  color: #ffffff;
+}
+
+/* =========================================================
+   BADGES: CLEAN FLAT ACCENTS
+   ========================================================= */
+
+.badge-flat {
+  font-family: var(--font-main);
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.35em 0.65em;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.badge-flat-primary {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.badge-flat-success {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.badge-flat-warning {
+  background-color: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.badge-flat-secondary {
+  background-color: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+/* =========================================================
+   INPUTS & FORMS
+   ========================================================= */
+
+.form-control-flat {
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  border: 1px solid var(--flat-border);
+  border-radius: var(--bs-border-radius-sm);
+  color: var(--flat-text-title);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.85rem;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease;
+}
+
+.form-control-flat:focus {
+  border-color: var(--flat-accent);
+  background-color: #ffffff;
+  color: var(--flat-text-title);
+}
+
+/* =========================================================
+   HERO BANNER & PRO SHOWCASE
+   ========================================================= */
+
+.hero-flat {
+  background-color: #090d16;
+  color: #ffffff;
+  border-bottom: 1px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-headline {
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: #94a3b8;
+  text-wrap: pretty;
+  max-width: 580px;
+}
+
+/* Pulsing Live Dot */
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background-color: #10b981;
+  opacity: 0.7;
+  animation: pulse-ring 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* Spotlight Card in Hero */
+.hero-spotlight-card {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5) !important;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-spotlight-card:hover {
+  border-color: #475569;
+  transform: translateY(-2px);
+}
+
+.hero-spotlight-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+
+/* Trust Feature Tiles */
+.trust-tile {
+  background-color: #ffffff;
+  border: 1px solid var(--flat-border);
+  border-radius: var(--bs-border-radius);
+  padding: 1.15rem 1.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.trust-tile:hover {
+  border-color: #cbd5e1;
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.trust-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CATEGORY PILLS (SWIPEABLE ON MOBILE)
+   ========================================================= */
+
+.category-scroll-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 4px;
+}
+
+.category-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--flat-border);
+  background-color: #ffffff;
+  color: var(--flat-text-muted);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.category-pill:hover {
+  background-color: var(--flat-surface-subtle);
+  color: var(--flat-text-title);
+  border-color: var(--flat-border-hover);
+}
+
+.category-pill.active {
+  background-color: var(--bs-dark);
+  color: #ffffff;
+  border-color: var(--bs-dark);
+}
+
+/* =========================================================
+   PRODUCT IMAGES & GRIDS
+   ========================================================= */
+
+.product-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--flat-border);
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.card-flat:hover .product-image-wrap img {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+  .hero-flat h1 {
+    font-size: 1.75rem;
+  }
+  .hero-flat p.lead {
+    font-size: 0.95rem;
+  }
+  .card-body-compact {
+    padding: 0.75rem !important;
+  }
+  .product-title-mobile {
+    font-size: 0.875rem !important;
+  }
+  .product-price-mobile {
+    font-size: 1rem !important;
+  }
+  .btn-mobile-touch {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

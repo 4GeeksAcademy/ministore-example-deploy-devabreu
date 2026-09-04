@@ -1,0 +1,98 @@
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+!.github
+php_errorlog
+.log
+
+# do not ignore gitpod and render files
+!.gitpod.Dockerfile
+!.welcome
+!.devcontainer
+!.devcontainer/*
+!Dockerfile.render
+!.gitpod.yml
+!render.yml
+!.render-buildpacks.json
+
+# track webpack configs (i.e. do NOT ignore it)
+!composer.json
+!webpack.config.js
+!package.json
+!webpack.production.js
+!webpack.development.js
+
+# track readme.md in the root (i.e. do NOT ignore it)
+!README.md
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Frontend build outputs (built dynamically in Render via render_build.sh)
+dist/
+dist/*
+.parcel-cache/
+.cache/
+
+# Dependencies
+node_modules/
+
+# Environments and secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Python & Backend
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+database.database
+database.db
+*.sqlite
+*.sql
+*.log
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Agent/Local configs
+.agents/
+.agent/
