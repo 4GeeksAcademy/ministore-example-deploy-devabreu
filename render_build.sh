@@ -2,9 +2,13 @@
 # exit on error
 set -o errexit
 
+# Frontend build
 npm install
 npm run build
 
-pipenv install
+# Install pipenv and project dependencies
+python -m pip install pipenv
+python -m pipenv install --deploy
 
-pipenv run upgrade
+# Run database migrations / upgrades
+python -m pipenv run upgrade
