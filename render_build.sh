@@ -11,4 +11,5 @@ python -m pip install pipenv
 python -m pipenv install --deploy
 
 # Run database migrations / upgrades
+python -m flask db merge heads -m "merge multiple heads"
 python -m pipenv run upgrade
