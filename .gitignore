@@ -59,24 +59,41 @@ Thumbs.db
 *.tar
 *.zip
 
-# ignore node/grunt dependency directories
+# Frontend build outputs (built dynamically in Render via render_build.sh)
+dist/
+dist/*
+.parcel-cache/
+.cache/
+
+# Dependencies
 node_modules/
 
-# webpack output
-dist/*
-!public/
-!public/*
-
-# ignore the dist directory were our bundle files are going to be
-!.gitkeep
-!.htaccess
-!.eslintrc
+# Environments and secrets
+.env
+.env.local
+.env.*.local
 !.env.example
-.now
 
-# backend stuff
-.venv
+# Python & Backend
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
 database.database
 database.db
-diagram.png
-__pycache__/
+*.sqlite
+*.sql
+*.log
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Agent/Local configs
+.agents/
+.agent/
+seed_database.py
