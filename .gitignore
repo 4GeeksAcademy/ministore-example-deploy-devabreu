@@ -96,3 +96,4 @@ Thumbs.db
 # Agent/Local configs
 .agents/
 .agent/
+seed_database.py

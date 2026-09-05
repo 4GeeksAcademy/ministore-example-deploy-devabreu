@@ -90,4 +90,47 @@ export const api = {
     if (!res.ok) throw new Error(data.message || "Failed to fetch orders");
     return data;
   },
+
+  // Admin Management Endpoints
+  async getAdminOrders(token) {
+    const res = await fetch(`${BASE_URL}/api/admin/orders`, {
+      headers: getHeaders(token),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Error al cargar pedidos globales");
+    return data;
+  },
+
+  async updateOrderStatus(orderId, status, token) {
+    const res = await fetch(`${BASE_URL}/api/admin/orders/${orderId}/status`, {
+      method: "PUT",
+      headers: getHeaders(token),
+      body: JSON.stringify({ status }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Error al actualizar estado del pedido");
+    return data;
+  },
+
+  async createProduct(productData, token) {
+    const res = await fetch(`${BASE_URL}/api/admin/products`, {
+      method: "POST",
+      headers: getHeaders(token),
+      body: JSON.stringify(productData),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Error al crear producto");
+    return data;
+  },
+
+  async updateProduct(productId, productData, token) {
+    const res = await fetch(`${BASE_URL}/api/admin/products/${productId}`, {
+      method: "PUT",
+      headers: getHeaders(token),
+      body: JSON.stringify(productData),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Error al actualizar producto");
+    return data;
+  },
 };
