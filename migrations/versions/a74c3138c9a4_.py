@@ -1,8 +1,8 @@
-"""init ecommerce models
+"""empty message
 
-Revision ID: aee844eeba94
+Revision ID: a74c3138c9a4
 Revises: 
-Create Date: 2026-09-04 17:46:06.286664
+Create Date: 2026-09-05 01:04:58.399224
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'aee844eeba94'
+revision = 'a74c3138c9a4'
 down_revision = None
 branch_labels = None
 depends_on = None
