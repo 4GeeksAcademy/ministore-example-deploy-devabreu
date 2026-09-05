@@ -11,5 +11,4 @@ python -m pip install pipenv
 python -m pipenv install --deploy
 
 # Run database migrations / upgrades
-python -m pipenv run reset_db
 python -m pipenv run upgrade
